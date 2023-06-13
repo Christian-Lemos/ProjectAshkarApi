@@ -21,10 +21,15 @@ export interface IPlayerRepository{
     DeleteById(id:string): Promise<void>;
     Create(options: IPlayerCreationOptions): Promise<Player>;
     GetAll(): Promise<Player[]>
+    GetByEmail(email: string): Promise<Player | null>
 }
 
 @injectable()
 export class PlayerRepository implements IPlayerRepository{
+
+    public GetByEmail(email: string): Promise<Player | null> {
+        return Player.findOne({where:{email: email.toLowerCase()}});
+    }
 
     public GetAll(): Promise<Player[]> {
         return Player.findAll();

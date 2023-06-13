@@ -21,6 +21,12 @@ const Paths = {
         Create:"/",
         Delete: "/:id",
     },
+    Auth:{
+        Base:"/auth",
+        Login:"/",
+        Logout:"/",
+        IsAuthenticated:"/verify"
+    }
 };
 
 

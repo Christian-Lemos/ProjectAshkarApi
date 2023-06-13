@@ -88,7 +88,7 @@ function split(thing: any):any {
             .replace("\\/?", "")
             .replace("(?=\\/|$)", "$")
             .match(/^\/\^((?:\\[.*+?^${}()|[\]\\/]|[^.*+?^${}()|[\]\\/])*)\$\//);
-        return match ? match[1].replace(/\\(.)/g, "$1").split("/") : "<complex:" + String(thing.toString()) + ">";
+        return match ? match[1].replace(/\\(.)/g, "$1").split("/") : "<complex:" + String(thing) + ">";
     }
 }
 

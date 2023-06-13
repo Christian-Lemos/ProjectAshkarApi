@@ -9,9 +9,7 @@ import "reflect-metadata";
 import path from "path";
 import dotenv from "dotenv";
 import { parse } from "ts-command-line-args";
-import { SetUpContainers } from "./SetUp/ContainerSetUp";
 
-SetUpContainers();
 
 //Container.set("player.repository", PlayerRepository);
 
@@ -32,7 +30,6 @@ const args = parse<IArgs>({
         alias: "e",
     },
 });
-
 // Set the env file
 const result2 = dotenv.config({
     path: path.join(__dirname, `../env/${String(args.env)}.env`),
@@ -40,3 +37,6 @@ const result2 = dotenv.config({
 if (result2.error) {
     throw result2.error;
 }
+
+import { SetUpContainers } from "./SetUp/ContainerSetUp";
+SetUpContainers();

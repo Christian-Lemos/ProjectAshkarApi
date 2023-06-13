@@ -7,7 +7,6 @@ import server from "./server";
 import OrmSetUp from "./SetUp/OrmSetUp"; 
 
 OrmSetUp.Prepare();
-
 const SERVER_START_MSG = ("Express server started on port: " + 
   EnvVars.Port.toString());
 

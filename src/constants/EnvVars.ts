@@ -4,7 +4,6 @@
 
 /* eslint-disable node/no-process-env */
 
-
 export default {
     NodeEnv: (process.env.NODE_ENV ?? ""),
     Port: (process.env.PORT ?? 0),
@@ -33,5 +32,9 @@ export default {
         Database: (process.env.ORM_DATABASE ??  ""),
         User: (process.env.ORM_USER ??  ""),
         Password: (process.env.ORM_PASSWORD ??  ""),
+    },
+    Auth:{
+        SecretKey: ((process.env.AUTH_SECRET ??  "")),
+        HttpHeader: ((process.env.AUTH_HTTP_HEADER ??  "")),
     },
 } as const;
